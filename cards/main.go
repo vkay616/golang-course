@@ -6,13 +6,15 @@ func main() {
 	// fmt.Println(card)
 	// cards := deck{newCard(), "Ace of Diamonds", newCard()}
 	// cards = append(cards, "Five of Club")
-	// cards := newDeck()
+	cards := newDeck()
 
 	// fmt.Println(cards.toString())
 
 	// cards.saveToFile("saved_cards")
 
-	cards := loadDeckFromFile("saved_cards")
+	// cards := loadDeckFromFile("saved_cards")
+
+	cards.shuffle()
 
 	cards.print()
 
