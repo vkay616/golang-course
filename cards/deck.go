@@ -33,7 +33,19 @@ func (d deck) print() {
 }
 
 func deal(d deck, handSize int) (deck, deck) {
-	return d[:handSize], d[handSize:]
+	dealtCards := deck{}
+	remainingCards := d
+
+	for i := 1; i <= handSize; i++ {
+
+		n := rand.Intn(len(d) - 1)
+
+		dealtCards = append(dealtCards, remainingCards[n])
+		remainingCards.removeElement(n)
+
+	}
+
+	return dealtCards, remainingCards
 }
 
 func (d deck) toString() string {
@@ -60,4 +72,9 @@ func (d deck) shuffle() {
 		n := rand.Intn(len(d) - 1)
 		d[i], d[n] = d[n], d[i]
 	}
+}
+
+func (d deck) removeElement(index int) deck {
+	d[index] = d[len(d)-1]
+	return d[:len(d)-1]
 }
