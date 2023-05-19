@@ -4,8 +4,9 @@ func main() {
 	// var card string = "Ace of Spades"
 	// card := newCard()
 	// fmt.Println(card)
-	cards := deck{newCard(), "Ace of Diamonds", newCard()}
-	cards = append(cards, "Five of Club")
+	// cards := deck{newCard(), "Ace of Diamonds", newCard()}
+	// cards = append(cards, "Five of Club")
+	cards := newDeck()
 
 	cards.print()
 
@@ -14,8 +15,4 @@ func main() {
 	// }
 
 	// fmt.Println(cards)
-}
-
-func newCard() string {
-	return "Ace of Hearts"
 }
