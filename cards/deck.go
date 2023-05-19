@@ -78,3 +78,18 @@ func (d deck) removeElement(index int) deck {
 	d[index] = d[len(d)-1]
 	return d[:len(d)-1]
 }
+
+func (d deck) containsDuplicates() bool {
+	checkedCards := deck{}
+
+	for _, card := range d {
+		for _, checkedCard := range checkedCards {
+			if card == checkedCard {
+				return true
+			}
+		}
+		checkedCards = append(checkedCards, card)
+	}
+
+	return false
+}
